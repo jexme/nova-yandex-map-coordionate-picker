@@ -1,5 +1,5 @@
 {
-  "name": "jexme/yandex-map-coordionate-picker",
+  "name": "jexme/nova-yandex-map-coordionate-picker",
   "description": "Coordinate picker on Yandex Map for Laravel Nova",
   "keywords": [
     "laravel",
