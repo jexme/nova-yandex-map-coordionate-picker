@@ -1,0 +1,9 @@
+{
+  "yandexMapPicker.api_key_not_found": "Ключ для Яндекс.Карты не заполнен",
+  "yandexMapPicker.button_open_map": "Открыть карту",
+  "yandexMapPicker.title": "Выбор координат",
+  "yandexMapPicker.save": "Сохранить",
+  "yandexMapPicker.cancel": "Отмена",
+  "yandexMapPicker.latitude": "Широта",
+  "yandexMapPicker.longitude": "Долгота"
+}

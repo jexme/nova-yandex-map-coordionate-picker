@@ -1,0 +1,9 @@
+{
+  "yandexMapPicker.api_key_not_found": "Key for Yandex.Maps is not filled",
+  "yandexMapPicker.button_open_map": "Open map",
+  "yandexMapPicker.title": "Choice of coordinates",
+  "yandexMapPicker.save": "Save",
+  "yandexMapPicker.cancel": "Cancel",
+  "yandexMapPicker.latitude": "Latitude",
+  "yandexMapPicker.longitude": "Longitude"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "jexme/yandex-map-coordionate-picker",
+  "description": "Coordinate picker on Yandex Map for Laravel Nova",
+  "keywords": [
+    "laravel",
+    "nova",
+    "yandex",
+    "map",
+    "picker",
+    "coordinates"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.3|^8.0",
+    "laravel/nova": "^4.0",
+    "laravel/framework": "^8.0|^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jexme\\YandexMapPicker\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jexme\\YandexMapPicker\\FieldServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "@php artisan vendor:publish --tag=yandex-map-picker-config"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
