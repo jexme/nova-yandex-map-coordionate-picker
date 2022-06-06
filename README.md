@@ -7,7 +7,7 @@ This field allows you to select coordinates from Yandex.Maps for Laravel Nova
 You can install the package in to a Laravel app that uses Nova via composer:
 
 ```bash
-composer require jexme/yandex-map-coordionate-picker
+composer require jexme/nova-yandex-map-coordionate-picker
 ```
 
 Now publish config and localization files:
