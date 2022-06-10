@@ -141,12 +141,8 @@ export default {
 
       const clickListener = (e) => {
         const coords = e.get('coords');
+        createPlacemark(coords);
 
-        if (myPlacemark) {
-          myPlacemark.geometry.setCoordinates(coords);
-        } else {
-          myPlacemark = createPlacemark(coords);
-        }
         this.valueTemporary = coords.toString()
       }
 
@@ -154,17 +150,21 @@ export default {
       myMap.events.add('click', clickListener);
 
       // Создание метки.
-      function createPlacemark(coords) {
-        myPlacemark = new ymaps.Placemark(coords, {}, {
-          preset: 'islands#violetDotIconWithCaption',
-          draggable: true
-        });
+      const createPlacemark = (coords) => {
+        if (myPlacemark) {
+          myPlacemark.geometry.setCoordinates(coords);
+        } else {
+          myPlacemark = new ymaps.Placemark(coords, {}, {
+            preset: 'islands#violetDotIconWithCaption',
+            draggable: true
+          });
 
-        myMap.geoObjects.add(myPlacemark);
+          myMap.geoObjects.add(myPlacemark);
+        }
 
-        myPlacemark.events.add('dragend', function () {
+        myPlacemark.events.add('dragend', () => {
           this.valueTemporary = myPlacemark.geometry.getCoordinates().toString();
-        });
+        })
       }
     },
 
