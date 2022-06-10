@@ -34,10 +34,9 @@ class FieldServiceProvider extends ServiceProvider
             Nova::script('yandex-map-picker', __DIR__ . '/../dist/js/field.js');
             Nova::style('yandex-map-picker', __DIR__ . '/../dist/css/field.css');
 
-            $locale = app()->getLocale();
             Nova::remoteScript(sprintf(
                 "https://api-maps.yandex.ru/2.1/?lang=%s&apikey=%s",
-                strtolower($locale) . '_' . strtoupper($locale),
+                strtolower(app()->getLocale()),
                 config('yandex-map-picker.api_key', ''),
             ));
 
