@@ -2,6 +2,8 @@
 
 This field allows you to select coordinates from Yandex.Maps for Laravel Nova
 
+![Example map](docs/example.png)
+
 ## Installation
 
 You can install the package in to a Laravel app that uses Nova via composer:
