@@ -134,7 +134,6 @@ export default {
 
       // Создание метки.
       const createPlacemark = (coords) => {
-        console.log(coords)
         if (myPlacemark) {
           myPlacemark.geometry.setCoordinates(coords);
         } else {
