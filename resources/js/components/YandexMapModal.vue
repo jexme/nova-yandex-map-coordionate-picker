@@ -132,6 +132,25 @@ export default {
         searchControlProvider: 'yandex#search'
       });
 
+      // Создание метки.
+      const createPlacemark = (coords) => {
+        console.log(coords)
+        if (myPlacemark) {
+          myPlacemark.geometry.setCoordinates(coords);
+        } else {
+          myPlacemark = new ymaps.Placemark(coords, {}, {
+            preset: 'islands#violetDotIconWithCaption',
+            draggable: true
+          });
+
+          myMap.geoObjects.add(myPlacemark);
+        }
+
+        myPlacemark.events.add('dragend', () => {
+          this.valueTemporary = myPlacemark.geometry.getCoordinates().toString();
+        })
+      }
+
       try {
         if (this.value) {
           createPlacemark(this.value.split(','))
@@ -148,24 +167,6 @@ export default {
 
       // Слушаем клик на карте.
       myMap.events.add('click', clickListener);
-
-      // Создание метки.
-      const createPlacemark = (coords) => {
-        if (myPlacemark) {
-          myPlacemark.geometry.setCoordinates(coords);
-        } else {
-          myPlacemark = new ymaps.Placemark(coords, {}, {
-            preset: 'islands#violetDotIconWithCaption',
-            draggable: true
-          });
-
-          myMap.geoObjects.add(myPlacemark);
-        }
-
-        myPlacemark.events.add('dragend', () => {
-          this.valueTemporary = myPlacemark.geometry.getCoordinates().toString();
-        })
-      }
     },
 
     close() {
